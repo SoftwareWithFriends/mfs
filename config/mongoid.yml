@@ -1,0 +1,11 @@
+test:
+  sessions:
+    default:
+      database: mfs_test
+      hosts:
+        - localhost:27017
+      options:
+        consistency: :strong
+        safe: true
+        pool_timeout: 15
+        pool_size: 5
