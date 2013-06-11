@@ -20,6 +20,6 @@ RSpec.configure do |config|
   end
 end
 
-ENV["MONGOID_ENV"] = 'test'
-
 require 'mfs'
+ENV["MONGOID_ENV"] = 'test'
+Mongoid.load!("#{Mfs::ROOT_DIR}/config/mongoid.yml")
