@@ -8,7 +8,7 @@ require "mfs/entry"
 
 
 module Mfs
-  ROOT_DIR = "#{__dir__}/.."
+  ROOT_DIR = "#{File.dirname(File.realpath(__FILE__))}/.."
   ENV["MONGOID_ENV"] ||= 'development'
   Mongoid.load!("#{ROOT_DIR}/config/mongoid.yml")
 end
