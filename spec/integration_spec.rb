@@ -3,7 +3,7 @@ require 'spec_helper'
 module Mfs
   describe "Integration" do
     before do
-      Loader.load_directory('spec/fixtures/files') do |filename|
+      Entry.load_directory('spec/fixtures/files') do |filename|
         {even: (filename[-1].to_i % 2 == 0) ? true : false}
       end
     end

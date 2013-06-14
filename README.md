@@ -24,25 +24,28 @@ Usage
 -----
 ```ruby
 require 'mfs'
-entry = Mfs::Loader.load_file('path/to/file')
+entry = Mfs::Entry.load_file('path/to/file')
 entry.filepath
 entry.filename
 entry.created_at
 entry.data
 
 # Set arbitrary Meta-data fields
-Mfs::Loader.load_file('path/to/file',test_field: true)
+Mfs::Entry.load_file('path/to/file',test_field: true)
 entry = Mfs::Entry.where(test_field: true).first
 
 # Load all files in a directory structure
-entries = Mfs::Loader.load_directory('path/to/files')
+entries = Mfs::Entry.load_directory('path/to/files')
 
 # Load all files and set meta-data
-entries = Mfs::Loader.load_directory('path/to/files') do |filename|
+entries = Mfs::Entry.load_directory('path/to/files') do |filename|
     {has_a: filename.include('a')}
 end
 
 ```
+
+Create your own file types.
+As an example see [Mfs::Types::Certificate](lib/types/certificate.rb) and its [Spec](spec/types/certificate_spec.rb)
 
 Limitations
 -----------

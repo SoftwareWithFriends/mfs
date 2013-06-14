@@ -8,9 +8,9 @@ module Mfs
         @entry = Entry.new
       end
 
-      subject {@entry}
+      subject { @entry }
 
-      it { should_not be_valid}
+      it { should_not be_valid }
     end
 
     describe "has proper fields" do
@@ -18,17 +18,20 @@ module Mfs
         @entry = Entry.create(
             data: "HarderBetterFasterStronger",
             filename: "spec/fixtures/file1",
-            filepath: "spec/fixtures"
+            filepath: "spec/fixtures",
+            filetype: "fake"
         )
       end
 
       subject { @entry }
 
-      it {should be_valid}
+      it { should be_valid }
       its(:data) { should eq "HarderBetterFasterStronger" }
       its(:filename) { should eq "file1" }
       its(:filepath) { should match "spec/fixtures" }
+      its(:filetype) { should eq "fake"}
       its(:created_at) { should be }
     end
+
   end
 end

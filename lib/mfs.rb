@@ -2,9 +2,9 @@ require 'bundler/setup'
 require 'mongoid'
 
 require "mfs/version"
-require "mfs/loader"
+require "mfs/can_be_created_from_files"
 require "mfs/entry"
-
+require "mfs/types/certificate"
 
 
 module Mfs
