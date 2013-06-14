@@ -45,7 +45,7 @@ end
 ```
 
 Create your own file types.
-As an example see [Mfs::Types::Certificate](lib/types/certificate.rb) and its [Spec](spec/types/certificate_spec.rb)
+As an example see [Mfs::Types::Certificate](lib/mfs/types/certificate.rb) and its [Spec](spec/types/certificate_spec.rb)
 
 Limitations
 -----------
